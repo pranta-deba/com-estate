@@ -1,3 +1,4 @@
+import AllProperties from "../components/AllProperties";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import Featured from "../components/Featured";
@@ -13,7 +14,10 @@ const Home = () => {
         <Categories data={data}/>
       </div>
       <div>
-        <Featured/>
+        <Featured data={data}/>
+      </div>
+      <div>
+        <AllProperties data={data}/>
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
 import ItemCard from "./ItemCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import useFetchData from "../hooks/useFetchData";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-const Featured = () => {
-  const { data } = useFetchData();
+const Featured = ({ data }) => {
   const [latestData, setLatestData] = useState([]);
   useEffect(() => {
     const latest = data.slice(5, data.length - 1);
     setLatestData(latest);
   }, [data]);
+  
   return (
-    <div className="md:px-32">
+    <div className="md:px-32 mt-10 md:mt-24">
       <div className="text-center space-y-3 mb-6">
-        <h1 className="text-4xl md:text-5xl font-medium">
+        <h1 className="text-4xl md:text-5xl font-medium text-hero-color uppercase">
           Latest Featured Properties
         </h1>
         <p className="max-w-[600px] mx-auto text-sm md:text-base font-light">
@@ -36,7 +36,7 @@ const Featured = () => {
         >
           {latestData.map((item, idnex) => (
             <SwiperSlide key={idnex}>
-              <ItemCard item={item}/>
+              <ItemCard item={item} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -52,9 +52,9 @@ const Featured = () => {
           }}
           modules={[Autoplay, Pagination, Navigation]}
         >
-         {latestData.map((item, idnex) => (
+          {latestData.map((item, idnex) => (
             <SwiperSlide key={idnex}>
-              <ItemCard item={item}/>
+              <ItemCard item={item} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -62,5 +62,7 @@ const Featured = () => {
     </div>
   );
 };
-
+Featured.propTypes = {
+    data: PropTypes.array,
+  };
 export default Featured;
