@@ -9,3 +9,4 @@
 
 - [](https://react-icons.github.io/react-icons/)
 - [](https://swiperjs.com/get-started)
+- [](https://www.npmjs.com/package/react-type-animation)
