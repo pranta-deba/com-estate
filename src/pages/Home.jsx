@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
+import Featured from "../components/Featured";
 import useFetchData from "../hooks/useFetchData";
 const Home = () => {
   const { data } = useFetchData();
@@ -10,6 +11,9 @@ const Home = () => {
       </div>
       <div>
         <Categories data={data}/>
+      </div>
+      <div>
+        <Featured/>
       </div>
     </div>
   );

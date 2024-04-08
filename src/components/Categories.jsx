@@ -69,16 +69,7 @@ const Categories = ({ data }) => {
         <h1 className="text-4xl font-bold text-[#2FA5FB]">
           <span className="text-hero-color">
             <TypeAnimation
-              sequence={[
-                "logo", // Types 'One'
-                1000, // Waits 1s
-                "Two", // Deletes 'One' and types 'Two'
-                2000, // Waits 2s
-                "Two Three", // Types 'Three' without deleting 'Two'
-                () => {
-                  console.log("Sequence completed");
-                },
-              ]}
+              sequence={["Name", 1000, "1000", 2000, "name"]}
               wrapper="span"
               cursor={true}
               repeat={Infinity}
@@ -92,9 +83,10 @@ const Categories = ({ data }) => {
         <h1 className="text-4xl font-bold text-[#2FA5FB]">
           <span className="text-hero-color">
             <TypeAnimation
-              sequence={["Logo", 500, "1200", 500, "Logo", 500]}
+              sequence={["Valid", 1000, "Expert", 2000, "Valid"]}
+              wrapper="span"
+              cursor={true}
               repeat={Infinity}
-              speed={500}
             />
           </span>{" "}
           AGENTS
