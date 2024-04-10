@@ -16,16 +16,57 @@ const Navbar = () => {
   const navItems = (
     <>
       <p>
-        <NavLink>Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "border-b-2 border-b-white"
+              : isPending
+              ? ""
+              : "border-b-2 border-b-transparent"
+          }
+        >
+          Home
+        </NavLink>
       </p>
       <p>
-        <NavLink>Properties</NavLink>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "border-b-2 border-b-white"
+              : isPending
+              ? ""
+              : "border-b-2 border-b-transparent"
+          }
+        >
+          Properties
+        </NavLink>
       </p>
       <p>
-        <NavLink>About</NavLink>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "border-b-2 border-b-white"
+              : isPending
+              ? ""
+              : "border-b-2 border-b-transparent"
+          }
+        >
+          About
+        </NavLink>
       </p>
       <p>
-        <NavLink>Contact</NavLink>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "border-b-2 border-b-white"
+              : isPending
+              ? ""
+              : "border-b-2 border-b-transparent"
+          }
+        >
+          Contact
+        </NavLink>
       </p>
     </>
   );
@@ -35,7 +76,11 @@ const Navbar = () => {
         <div className="flex lg:hidden">
           <div className="z-50">
             <button className="text-white p-2 " onClick={toggleNavbar}>
-              {isOpen ? <MdOutlineMenuOpen className="text-3xl"/> : <MdOutlineMenuOpen className="text-3xl"/>}
+              {isOpen ? (
+                <MdOutlineMenuOpen className="text-3xl" />
+              ) : (
+                <MdOutlineMenuOpen className="text-3xl" />
+              )}
             </button>
             {isOpen && (
               <div className="fixed top-0 left-0 bg-[#004274] text-white w-40 h-screen z-40">
@@ -43,7 +88,7 @@ const Navbar = () => {
                   className="text-white absolute top-2 right-2"
                   onClick={closeNavbar}
                 >
-                  <IoClose className="text-3xl"/>
+                  <IoClose className="text-3xl" />
                 </button>
                 <ul className="flex flex-col items-center mt-12">{navItems}</ul>
               </div>
@@ -84,9 +129,18 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <a className="btn border-2 border-[#00AEFF] hover:border-[#00AEFF] bg-[#00AEFF] text-white hover:bg-[#004274] hover:text-[#00AEFF] px-6 text-base">
+        <NavLink
+          to="/sign_in"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "btn border-2 border-[#00AEFF] hover:border-[#00AEFF] bg-transparent hover:bg-[#004274] text-[#00AEFF] px-6 text-base"
+              : isPending
+              ? ""
+              : "btn border-2 border-[#00AEFF] hover:border-[#00AEFF] bg-[#00AEFF] text-white hover:bg-[#004274] hover:text-[#00AEFF] px-6 text-base"
+          }
+        >
           Sign In
-        </a>
+        </NavLink>
       </div>
     </div>
   );
