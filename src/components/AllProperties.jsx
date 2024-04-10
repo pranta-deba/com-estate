@@ -112,7 +112,7 @@ const AllProperties = ({ data }) => {
               type="checkbox"
               className="checkbox checkbox-primary"
             />
-            <span className="label-text font-medium">Discount</span>
+            <span className="label-text font-medium">Offer</span>
           </label>
         </div>
       </div>

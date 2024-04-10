@@ -6,10 +6,13 @@ import "swiper/css/navigation";
 import { IoSearchOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import { createNumToToken } from "../utils/createToken";
 
 const Banner = ({ data }) => {
   const item = data[data.length - 1] || {};
   const item2 = data[data.length - 2] || {};
+  const token = createNumToToken(item.id);
+  const token2 = createNumToToken(item2.id);
 
   return (
     <Swiper
@@ -74,7 +77,7 @@ const Banner = ({ data }) => {
             <p className="text-base font-normal">{item?.description}</p>
             <p className="text-3xl font-semibold">{item?.price}</p>
             <NavLink
-              to={`/details/${item.id}`}
+              to={`/details/${token}`}
               className="btn border-2 border-[#00AEFF] hover:border-[#00AEFF] bg-[#00AEFF] text-white hover:bg-[#004274] hover:text-[#00AEFF] px-6 text-base"
             >
               View Property
@@ -97,7 +100,7 @@ const Banner = ({ data }) => {
             <p className="text-base font-normal">{item2?.description}</p>
             <p className="text-3xl font-semibold">{item2?.price}</p>
             <NavLink
-              to={`/details/${item2.id}`}
+              to={`/details/${token2}`}
               className="btn border-2 border-[#00AEFF] hover:border-[#00AEFF] bg-[#00AEFF] text-white hover:bg-[#004274] hover:text-[#00AEFF] px-6 text-base"
             >
               View Property
