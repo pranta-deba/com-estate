@@ -10,3 +10,6 @@
 - [](https://react-icons.github.io/react-icons/)
 - [](https://swiperjs.com/get-started)
 - [](https://www.npmjs.com/package/react-type-animation)
+- [](https://react-hook-form.com/get-started)
+- [](https://https://firebase.google.com/)
+- [](https://fkhadra.github.io/react-toastify/installation)
