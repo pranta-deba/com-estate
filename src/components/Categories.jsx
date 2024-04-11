@@ -69,7 +69,7 @@ const Categories = ({ data }) => {
         <h1 className="text-4xl font-bold text-[#2FA5FB]">
           <span className="text-hero-color">
             <TypeAnimation
-              sequence={["Name", 1000, "1000", 2000, "name"]}
+              sequence={["COM", 1000, "Estate", 2000, "COM"]}
               wrapper="span"
               cursor={true}
               repeat={Infinity}

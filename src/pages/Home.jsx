@@ -6,7 +6,7 @@ import useFetchData from "../hooks/useFetchData";
 const Home = () => {
   const { data } = useFetchData();
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <div>
         <Banner data={data} />
       </div>

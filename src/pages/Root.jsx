@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import useAuth from "../hooks/UseAuth";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 const Root = () => {
@@ -21,7 +21,9 @@ const Root = () => {
       <div className="min-h-[calc(100vh-477.6px)]">
         <Outlet />
       </div>
-      <div className="mt-12">{/* <Footer /> */}</div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
