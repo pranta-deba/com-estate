@@ -78,10 +78,16 @@ const SignUp = () => {
         <title>Sign Up</title>
         <link rel="shortcut icon" href="/log.png" type="image/x-icon" />
       </Helmet>
-      <div className="mt-12 flex justify-center items-center lg:px-32 px-2">
+      <div>
+        <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
+          <div className="bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
+            Sign Up
+          </div>
+        </div>
+      </div>
+      <div className="my-2 md:my-12 flex justify-center items-center lg:px-32 px-2">
         <div className="text-center w-full md:w-[70%] lg:w-[50%] space-y-5 bg-[#D2EDF8] p-4 md:p-16">
-          <h1 className="text-3xl font-semibold capitalize">Sign Up</h1>
-          <p className="px-6 text-sm text-center dark:text-gray-600">
+          <p className="px-6 text-sm text-center dark:text-gray-600 flex justify-center gap-1 flex-wrap">
             Already have an account?
             <NavLink
               to="/sign_in"
@@ -95,36 +101,6 @@ const SignUp = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"
           >
-            {/* <label>
-              <input
-                type="text"
-                name="firstName"
-                {...register("firstName", {
-                  required: "input field is required",
-                  minLength: { value: 2, message: "min length 3" },
-                })}
-                placeholder="First Name"
-                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
-              />
-              <p className="text-xs text-start text-red-500">
-                {errors.firstName?.message}
-              </p>
-            </label> */}
-            {/* <label>
-              <input
-                type="text"
-                name="lastName"
-                {...register("lastName", {
-                  required: "input field is required",
-                  minLength: { value: 2, message: "min length 3" },
-                })}
-                placeholder="Last Name"
-                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
-              />
-              <p className="text-xs text-start text-red-500">
-                {errors.lastName?.message}
-              </p>
-            </label> */}
             <label>
               <input
                 type="email"
@@ -145,20 +121,6 @@ const SignUp = () => {
                 </p>
               )}
             </label>
-            {/* <label>
-              <input
-                type="text"
-                name="photoURL"
-                {...register("photoURL", {
-                  required: "input field is required",
-                })}
-                placeholder="Photo URL"
-                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
-              />
-              <p className="text-xs text-start text-red-500">
-                {errors.photoURL?.message}
-              </p>
-            </label> */}
             <label className="relative">
               <input
                 type={passwordToggle1 ? "text" : "password"}

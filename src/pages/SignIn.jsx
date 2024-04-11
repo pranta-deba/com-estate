@@ -105,9 +105,15 @@ const Login = () => {
         <title>Sign In</title>
         <link rel="shortcut icon" href="/log.png" type="image/x-icon" />
       </Helmet>
-      <div className="mt-12  flex justify-center items-center lg:px-32 px-2">
+      <div>
+        <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
+          <div className="bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
+            Sign In
+          </div>
+        </div>
+      </div>
+      <div className="my-2 md:my-12  flex flex-col justify-center items-center lg:px-32 px-2">
         <div className="text-center w-full md:w-[70%] lg:w-[50%] space-y-5 bg-[#D2EDF8] p-4 md:p-16">
-          <h1 className="text-3xl font-semibold capitalize">Sign In</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"

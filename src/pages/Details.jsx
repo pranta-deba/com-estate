@@ -43,7 +43,7 @@ const Details = () => {
         <title>{estate_title}</title>
         <link rel="shortcut icon" href={image_url} type="image/x-icon" />
       </Helmet>
-      <div className="flex flex-col-reverse lg:flex-row justify-center md:gap-4 lg:px-32 mt-4 md:mt-12 px-5">
+      <div className="flex flex-col-reverse lg:flex-row justify-center md:gap-4 lg:px-32 my-4 md:my-12 px-5">
         <div className="flex-1 space-y-4">
           <h1 className="text-3xl font-semibold text-hero-color">
             {estate_title}

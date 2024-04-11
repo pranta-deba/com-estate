@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import PrivateSignInSignUp from "./PrivateSignInSignUp";
 import Properties from "../pages/Properties";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
         path: "/about",
         loader: () => fetch('/about.json'),
         element: <About/>,
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
       },
     ],
   },

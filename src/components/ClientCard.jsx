@@ -27,7 +27,7 @@ const ClientCard = ({ item, icon }) => {
             className="object-cover h-full w-full"
           />
         </div>
-        <div className="flip-card-back text-center">
+        <div className="flip-card-back text-center p-2">
           <p className="flex justify-center">{icons}</p>
           <h1 className="text-2xl font-semibold mb-4 text-hero-color">
             {item?.title}

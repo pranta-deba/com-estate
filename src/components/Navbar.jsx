@@ -66,6 +66,7 @@ const Navbar = () => {
       </p>
       <p>
         <NavLink
+        to="/contact"
           className={({ isActive, isPending }) =>
             isActive
               ? "border-b-2 border-b-white"
@@ -107,7 +108,7 @@ const Navbar = () => {
           </div>
         </div>
         <NavLink to="/" className="flex uppercase items-center overflow-hidden">
-          <img src="/logo.png" alt="loading......." className="md:w-[210px]" />
+          <img src="/logo.png" alt="loading......." className="w-[210px]" />
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">

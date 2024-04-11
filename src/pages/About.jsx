@@ -44,7 +44,7 @@ const About = () => {
         )}
       </div>
       <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
-        <div className="bg-white bg-opacity-75 py-4">
+        <div className="bg-white bg-opacity-75 pb-10">
           <div className="py-4 md:py-12">
             <h1 className="text-center text-4xl font-bold">
               <span className="text-hero-color">Recent</span>{" "}
