@@ -13,3 +13,4 @@
 - [](https://react-hook-form.com/get-started)
 - [](https://https://firebase.google.com/)
 - [](https://fkhadra.github.io/react-toastify/installation)
+- [](https://github.com/davidhu2000/react-spinners)

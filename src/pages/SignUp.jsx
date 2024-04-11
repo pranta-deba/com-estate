@@ -4,24 +4,31 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/UseAuth";
 import { useForm } from "react-hook-form";
-import { ToastContainer,toast,Bounce } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+import RingLoader from "react-spinners/RingLoader";
 
 const SignUp = () => {
   const { createUser } = useAuth();
   const [passwordToggle1, setPasswordToggle1] = useState(false);
   const [passwordToggle2, setPasswordToggle2] = useState(false);
+  const [signUpLoader, setSignUpLoader] = useState(false);
+  const navigate = useNavigate();
+  const form = "/";
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
     watch,
   } = useForm();
 
   const handleCreateUser = (a) => {
+    setSignUpLoader(true);
     createUser(a.email, a.password)
       .then(() => {
-        toast.success('Registration Successfully.', {
+        toast.success("Registration Successfully.", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -31,10 +38,26 @@ const SignUp = () => {
           progress: undefined,
           theme: "light",
           transition: Bounce,
-          });
+        });
+        setTimeout(() => {
+          reset();
+          setSignUpLoader(false);
+          navigate(form);
+        }, 2000);
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message.split("/")[1].split(")")[0], {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+        setSignUpLoader(false);
       });
   };
   const onSubmit = (data) => {
@@ -72,7 +95,7 @@ const SignUp = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"
           >
-            <label>
+            {/* <label>
               <input
                 type="text"
                 name="firstName"
@@ -86,8 +109,8 @@ const SignUp = () => {
               <p className="text-xs text-start text-red-500">
                 {errors.firstName?.message}
               </p>
-            </label>
-            <label>
+            </label> */}
+            {/* <label>
               <input
                 type="text"
                 name="lastName"
@@ -101,7 +124,7 @@ const SignUp = () => {
               <p className="text-xs text-start text-red-500">
                 {errors.lastName?.message}
               </p>
-            </label>
+            </label> */}
             <label>
               <input
                 type="email"
@@ -122,7 +145,7 @@ const SignUp = () => {
                 </p>
               )}
             </label>
-            <label>
+            {/* <label>
               <input
                 type="text"
                 name="photoURL"
@@ -135,7 +158,7 @@ const SignUp = () => {
               <p className="text-xs text-start text-red-500">
                 {errors.photoURL?.message}
               </p>
-            </label>
+            </label> */}
             <label className="relative">
               <input
                 type={passwordToggle1 ? "text" : "password"}
@@ -202,7 +225,13 @@ const SignUp = () => {
               type="submit"
               className="bg-hero-color w-full py-3 text-lg text-white uppercase hover:bg-[#73C2FC] transition-all"
             >
-              create
+              {signUpLoader ? (
+                <p className="flex justify-center">
+                  <RingLoader size={28} color="#FFFFFF" />
+                </p>
+              ) : (
+                "create"
+              )}
             </button>
           </form>
         </div>

@@ -4,9 +4,59 @@ import { BsGithub } from "react-icons/bs";
 import { FaGoogle, FaTwitter } from "react-icons/fa6";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/UseAuth";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import RingLoader from "react-spinners/RingLoader";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [passwordToggle, setPasswordToggle] = useState(false);
+  const [loginLoader, setLoginLoader] = useState(false);
+  const { logInUser } = useAuth();
+  const navigate = useNavigate();
+  const form = "/";
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const handleSignIn = (a) => {
+    setLoginLoader(true);
+    logInUser(a.email, a.password)
+      .then(() => {
+        setTimeout(() => {
+          reset();
+          setLoginLoader(false);
+          navigate(form);
+        }, 2000);
+      })
+      .catch((error) => {
+        toast.error(
+          error.message.split("/")[1].split(")")[0] +
+            ", please enter a valid email & password!",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          }
+        );
+        setLoginLoader(false);
+      });
+  };
+  const onSubmit = (data) => {
+    handleSignIn(data);
+  };
+
   const handlePasswordToggle = () => {
     setPasswordToggle(!passwordToggle);
   };
@@ -19,20 +69,43 @@ const Login = () => {
       <div className="mt-12  flex justify-center items-center lg:px-32 px-5">
         <div className="text-center w-full md:w-[70%] lg:w-[50%] space-y-5 bg-[#D2EDF8] p-4 md:p-16">
           <h1 className="text-3xl font-semibold capitalize">Sign In</h1>
-          <form className="flex flex-col gap-4">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-4"
+          >
             <label>
               <input
                 type="email"
+                name="email"
+                {...register("email", {
+                  required: "input field is required",
+                  pattern: /^[A-Za-z0-9@.]+(?:\.[A-Za-z0-9]+)+$/,
+                })}
                 placeholder="Email"
                 className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
               />
+              <p className="text-xs text-start text-red-500">
+                {errors.email?.message}
+              </p>
+              {errors?.email?.type === "pattern" && (
+                <p className="text-xs text-start text-red-500">
+                  Invalid email format!
+                </p>
+              )}
             </label>
             <label className="relative">
               <input
                 type={passwordToggle ? "text" : "password"}
                 placeholder="Password"
+                name="password"
+                {...register("password", {
+                  required: "input field is required",
+                })}
                 className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
               />
+              <p className="text-xs text-start text-red-500">
+                {errors.password?.message}
+              </p>
 
               {passwordToggle ? (
                 <IoEyeOff
@@ -50,7 +123,13 @@ const Login = () => {
               Forgot Your Password?
             </p>
             <button className="bg-hero-color w-full py-3 text-lg text-white uppercase hover:bg-[#73C2FC] transition-all">
-              sign in
+              {loginLoader ? (
+                <p className="flex justify-center">
+                  <RingLoader size={28} color="#FFFFFF" />
+                </p>
+              ) : (
+                "Sign in"
+              )}
             </button>
           </form>
           <div className="flex items-center pt-4 space-x-1">
@@ -83,6 +162,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
