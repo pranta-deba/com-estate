@@ -66,7 +66,7 @@ const AllProperties = ({ data }) => {
           business needs.
         </p>
       </div>
-      <div className="my-8 flex justify-center gap-6">
+      <div className="my-8 flex justify-center flex-wrap gap-6">
         <div className="">
           <label className="flex items-center gap-3">
             <input

@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { MdOutlineMenuOpen } from "react-icons/md";
-// import { MdOutlineMenuOpen } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/UseAuth";
 
 const Navbar = () => {
-  const { user, logOut,profilePic,profileName } = useAuth();
+  const { user, logOut, profilePic, profileName } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -16,8 +15,7 @@ const Navbar = () => {
   };
   const handleLogOut = () => {
     logOut()
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => {
         console.log(error);
       });
@@ -99,7 +97,9 @@ const Navbar = () => {
                 >
                   <IoClose className="text-3xl" />
                 </button>
-                <ul className="flex flex-col items-center mt-12">{navItems}</ul>
+                <ul className="flex flex-col items-center mt-12 gap-8">
+                  {navItems}
+                </ul>
               </div>
             )}
           </div>
@@ -115,39 +115,42 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-2">
         {user ? (
-          <div className="dropdown dropdown-bottom dropdown-end">
-            <div tabIndex={0} role="button" className="m-1">
-              <div className="avatar">
-                <div
-                  title={profileName || "Name not found!"}
-                  className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                >
-                  <img src={profilePic || "/log.png"} />
+          <div className="tooltip tooltip-left tooltip-info" data-tip={profileName || "Name not found!"}>
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <div tabIndex={0} role="button" className="m-1">
+                <div className="avatar">
+                  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                  >
+                    <img src={profilePic || "/log.png"} />
+                  </div>
                 </div>
               </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow rounded-box bg-hero-color w-52"
-            >
-              <p className="btn bg-transparent border-none text-white hover:text-black">
-                <NavLink
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "border-b-2 border-b-white"
-                      : isPending
-                      ? ""
-                      : "border-b-2 border-b-transparent"
-                  }
-                  to="update_profile"
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow rounded-box bg-hero-color w-52"
+              >
+                <p className="btn bg-transparent border-none text-white hover:text-black">
+                  <NavLink
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-b-2 border-b-white"
+                        : isPending
+                        ? ""
+                        : "border-b-2 border-b-transparent"
+                    }
+                    to="update_profile"
+                  >
+                    Update Profile
+                  </NavLink>
+                </p>
+                <p
+                  className="btn bg-transparent border-none text-white hover:text-black"
+                  onClick={handleLogOut}
                 >
-                  Update Profile
-                </NavLink>
-              </p>
-              <p className="btn bg-transparent border-none text-white hover:text-black" onClick={handleLogOut}>
-                <a>Sign Out</a>
-              </p>
-            </ul>
+                  <a>Sign Out</a>
+                </p>
+              </ul>
+            </div>
           </div>
         ) : (
           <NavLink

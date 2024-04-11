@@ -77,7 +77,7 @@ const UpdateProfile = () => {
         </div>
       </div>
       <div className="flex-1">
-        <div className="w-[60%] mx-auto">
+        <div className="md:w-[60%] mx-auto">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"

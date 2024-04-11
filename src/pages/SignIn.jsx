@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [passwordToggle, setPasswordToggle] = useState(false);
   const [loginLoader, setLoginLoader] = useState(false);
-  const { logInUser } = useAuth();
+  const { logInUser, googleSignIn, githubSignIn } = useAuth();
   const navigate = useNavigate();
   const form = "/";
   const {
@@ -56,9 +56,47 @@ const Login = () => {
   const onSubmit = (data) => {
     handleSignIn(data);
   };
-
   const handlePasswordToggle = () => {
     setPasswordToggle(!passwordToggle);
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        navigate(form);
+      })
+      .catch((error) => {
+        toast.error(error.message.split("/")[1].split(")")[0], {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      });
+  };
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then(() => {
+        navigate(form);
+      })
+      .catch((error) => {
+        toast.error(error.message.split("/")[1].split(")")[0], {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      });
   };
   return (
     <>
@@ -140,14 +178,20 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 bg-hero-color dark:bg-gray-300"></div>
           </div>
           <div className="flex justify-center space-x-4">
-            <button className="p-3 rounded-sm text-xl">
-              <FaGoogle />
+            <button
+              onClick={handleGoogleSignIn}
+              className="p-3 rounded-sm text-xl"
+            >
+              <FaGoogle className="hover:scale-125 transition-all" />
             </button>
             <button className="p-3 rounded-sm text-xl">
-              <FaTwitter />
+              <FaTwitter className="hover:scale-125 transition-all" />
             </button>
-            <button className="p-3 rounded-sm text-xl">
-              <BsGithub />
+            <button
+              onClick={handleGithubSignIn}
+              className="p-3 rounded-sm text-xl"
+            >
+              <BsGithub className="hover:scale-125 transition-all" />
             </button>
           </div>
           <p className="px-6 text-sm text-center dark:text-gray-600">
