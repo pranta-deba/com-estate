@@ -63,7 +63,7 @@ const UpdateProfile = () => {
     handleUpdateUser(data);
   };
   return (
-    <div className="mt-12 flex flex-col justify-center gap-4 lg:px-32 px-5">
+    <div className="mt-12 flex flex-col justify-center gap-4 lg:px-32 px-2">
       <div className="flex-1">
         <div className="flex flex-col  dark:bg-gray-50 dark:text-gray-800">
           <img

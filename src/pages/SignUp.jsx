@@ -78,7 +78,7 @@ const SignUp = () => {
         <title>Sign Up</title>
         <link rel="shortcut icon" href="/log.png" type="image/x-icon" />
       </Helmet>
-      <div className="mt-12 flex justify-center items-center lg:px-32 px-5">
+      <div className="mt-12 flex justify-center items-center lg:px-32 px-2">
         <div className="text-center w-full md:w-[70%] lg:w-[50%] space-y-5 bg-[#D2EDF8] p-4 md:p-16">
           <h1 className="text-3xl font-semibold capitalize">Sign Up</h1>
           <p className="px-6 text-sm text-center dark:text-gray-600">

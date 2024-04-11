@@ -2,15 +2,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.stroke-text{
-    -webkit-text-stroke-width: .7px;
+
+.stroke-text {
+  -webkit-text-stroke-width: .7px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
 }
+
 .scrollBar::-webkit-scrollbar {
   display: none;
+}
+
+.border-hero {
+  border-radius: 30% 70% 70% 30% / 30% 37% 63% 70%;
+  animation: myMove 8s infinite;
+}
+
+@keyframes myMove {
+  20% {
+    border-radius: 58% 42% 70% 30% / 30% 51% 49% 70%;
+  }
+
+  50% {
+    border-radius: 80% 20% 62% 38% / 20% 69% 31% 80%;
+  }
+
+  70% {
+    border-radius: 44% 56% 65% 35% / 18% 87% 13% 82%;
+  }
+
+  100% {
+    border-radius: 58% 42% 70% 30% / 30% 51% 49% 70%;
+  }
 }

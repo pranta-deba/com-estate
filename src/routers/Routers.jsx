@@ -6,6 +6,9 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import UpdateProfile from "../pages/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
+import PrivateSignInSignUp from "./PrivateSignInSignUp";
+import Properties from "../pages/Properties";
+import About from "../pages/About";
 
 export const router = createBrowserRouter([
   {
@@ -18,19 +21,44 @@ export const router = createBrowserRouter([
       },
       {
         path: "/details/:token",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/sign_in",
-        element: <SignIn />,
+        element: (
+          <PrivateSignInSignUp>
+            <SignIn />
+          </PrivateSignInSignUp>
+        ),
       },
       {
         path: "/sign_up",
-        element: <SignUp />,
+        element: (
+          <PrivateSignInSignUp>
+            <SignUp />
+          </PrivateSignInSignUp>
+        ),
       },
       {
         path: "/update_profile",
-        element: <PrivateRoute><UpdateProfile /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/properties",
+        element: <Properties/>,
+      },
+      {
+        path: "/about",
+        loader: () => fetch('/about.json'),
+        element: <About/>,
       },
     ],
   },

@@ -38,6 +38,7 @@ const Navbar = () => {
       </p>
       <p>
         <NavLink
+        to="/properties"
           className={({ isActive, isPending }) =>
             isActive
               ? "border-b-2 border-b-white"
@@ -51,6 +52,7 @@ const Navbar = () => {
       </p>
       <p>
         <NavLink
+        to="/about"
           className={({ isActive, isPending }) =>
             isActive
               ? "border-b-2 border-b-white"

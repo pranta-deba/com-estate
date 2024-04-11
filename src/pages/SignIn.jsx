@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { BsGithub } from "react-icons/bs";
 import { FaGoogle, FaTwitter } from "react-icons/fa6";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import useAuth from "../hooks/UseAuth";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast, Bounce } from "react-toastify";
@@ -12,11 +12,12 @@ import RingLoader from "react-spinners/RingLoader";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const location = useLocation();
   const [passwordToggle, setPasswordToggle] = useState(false);
   const [loginLoader, setLoginLoader] = useState(false);
   const { logInUser, googleSignIn, githubSignIn } = useAuth();
   const navigate = useNavigate();
-  const form = "/";
+  const form = location.state || "/";
   const {
     register,
     handleSubmit,
@@ -104,7 +105,7 @@ const Login = () => {
         <title>Sign In</title>
         <link rel="shortcut icon" href="/log.png" type="image/x-icon" />
       </Helmet>
-      <div className="mt-12  flex justify-center items-center lg:px-32 px-5">
+      <div className="mt-12  flex justify-center items-center lg:px-32 px-2">
         <div className="text-center w-full md:w-[70%] lg:w-[50%] space-y-5 bg-[#D2EDF8] p-4 md:p-16">
           <h1 className="text-3xl font-semibold capitalize">Sign In</h1>
           <form

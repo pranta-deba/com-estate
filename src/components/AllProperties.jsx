@@ -55,7 +55,7 @@ const AllProperties = ({ data }) => {
   };
 
   return (
-    <div className="lg:px-32 mt-10 md:mt-24 px-5">
+    <div className="lg:px-32 mt-10 md:mt-24 px-2">
       <div className="text-center space-y-3 mb-6">
         <h1 className="text-4xl md:text-5xl font-medium text-hero-color uppercase">
           BEST PROPERTIES
