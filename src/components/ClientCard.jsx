@@ -3,19 +3,20 @@ import "./ClientCard.css";
 import { TbHomeStats, TbShoppingCartStar } from "react-icons/tb";
 import { GrDocumentConfig } from "react-icons/gr";
 import PropTypes from "prop-types";
+import { MdOutlineVerified } from "react-icons/md";
 
 const ClientCard = ({ item, icon }) => {
   let icons;
   if (icon === "APPROVED PLANS") {
     icons = <FaUsersCog className="text-7xl text-hero-color" />;
   } else if (icon === "VERIFIED AGENTS") {
-    icons = <TbShoppingCartStar className="text-7xl text-hero-color" />;
+    icons = <MdOutlineVerified className="text-7xl text-hero-color" />;
   } else if (icon === "QUICK BUY") {
     icons = <TbShoppingCartStar className="text-7xl text-hero-color" />;
   } else if (icon === "EASY DOCUMENT") {
-    icons = <TbHomeStats className="text-7xl text-hero-color" />;
-  } else if (icon === "HUGE COLLECTION") {
     icons = <GrDocumentConfig className="text-7xl text-hero-color" />;
+  } else if (icon === "HUGE COLLECTION") {
+    icons = <TbHomeStats className="text-7xl text-hero-color" />;
   }
   return (
     <div className="flip-card">

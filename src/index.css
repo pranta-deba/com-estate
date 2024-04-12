@@ -22,6 +22,9 @@
   border-radius: 30% 70% 70% 30% / 30% 37% 63% 70%;
   animation: myMove 8s infinite;
 }
+.leaflet-container{
+  height: 100vh;
+}
 
 @keyframes myMove {
   20% {
