@@ -127,8 +127,8 @@ const SignUp = () => {
                 name="password"
                 {...register("password", {
                   required: "input field is required",
-                  minLength: { value: 6, message: "min length 6" },
-                  maxLength: { value: 12, message: "max length 12" },
+                  minLength: { value: 6, message: "Password should be at least 6 characters." },
+                  maxLength: { value: 12, message: "The maximum password can be 12 characters" },
                   pattern: /^(?=.*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d{2,}).{6,}$/i,
                 })}
                 placeholder="Password"
@@ -136,7 +136,7 @@ const SignUp = () => {
               />
               {errors?.password?.type === "pattern" && (
                 <p className="text-xs text-start text-red-500">
-                  uppercase lowercase number
+                  at least one uppercase letter, one lowercase letter, and one number.
                 </p>
               )}
               <p className="text-xs text-start text-red-500">
@@ -161,7 +161,7 @@ const SignUp = () => {
                 {...register("confirmPassword", {
                   validate: (data) => {
                     if (watch("password") !== data) {
-                      return "pass not match";
+                      return "Password not match";
                     }
                   },
                 })}

@@ -15,3 +15,4 @@
 - [](https://fkhadra.github.io/react-toastify/installation)
 - [](https://github.com/davidhu2000/react-spinners)
 - [](https://react-leaflet.js.org/docs/start-installation/)
+- [](https://www.npmjs.com/package/aos)

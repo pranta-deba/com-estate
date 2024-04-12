@@ -19,7 +19,7 @@ const ClientCard = ({ item, icon }) => {
     icons = <TbHomeStats className="text-7xl text-hero-color" />;
   }
   return (
-    <div className="flip-card">
+    <div className="flip-card" data-aos="flip-left">
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img

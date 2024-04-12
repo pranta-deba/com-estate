@@ -26,35 +26,67 @@ const Banner = ({ data }) => {
       modules={[Pagination, Navigation]}
     >
       <SwiperSlide>
-        <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] w-full h-screen bg-cover bg-bottom flex items-center justify-center text-center px-20">
+        <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/bg.jpg')] w-full h-screen bg-cover bg-bottom flex items-center justify-center text-center px-20">
           <div className="text-white space-y-6">
-            <h1 className="text-4xl md:text-6xl font-semibold">
-              BUY <span className="text-hero-color stroke-text">OR</span> SELL @ YOUR <span className="text-hero-color stroke-text">CONVENIENCE</span>
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="text-4xl md:text-6xl font-semibold"
+            >
+              BUY <span className="text-[#73C2FC] stroke-text">OR</span> SELL 
+              YOUR{" "}
+              <span className="text-[#73C2FC] stroke-text">CONVENIENCE</span>
             </h1>
-            <p>We give life to you home & property dreams at your budget</p>
+            <p data-aos="fade-up" data-aos-duration="1500">
+              We give life to you home & property dreams at your budget
+            </p>
             <div>
               <label className="relative">
                 <input
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
                   type="text"
                   placeholder="search"
                   className="border-4 border-transparent focus:border-4 focus:border-[#73C2FC] p-3 md:w-[50%]  outline-none text-black transition-all rounded-md"
                 />
-                <IoSearchOutline className="absolute text-[#73C2FC] -top-1 right-2 text-3xl font-bold cursor-pointer" />
+                <IoSearchOutline
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="absolute text-[#73C2FC] -top-1 right-2 text-3xl font-bold cursor-pointer"
+                />
               </label>
             </div>
             <div className="flex flex-col items-center justify-center gap-3">
-              <p>Popular searches : </p>
+              <p data-aos="fade-up" data-aos-duration="2500">
+                Popular searches :{" "}
+              </p>
               <p className="flex gap-3 items-center">
-                <NavLink className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all">
+                <NavLink
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all"
+                >
                   Rent
                 </NavLink>
-                <NavLink className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all">
+                <NavLink
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all"
+                >
                   Lease
                 </NavLink>
-                <NavLink className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all">
+                <NavLink
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all"
+                >
                   Sale
                 </NavLink>
-                <NavLink className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all">
+                <NavLink
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="bg-[#D2EDF8] py-1 px-2 text-hero-color rounded-sm hover:bg-hero-color hover:text-[#D2EDF8] cursor-pointer transition-all"
+                >
                   Apartment
                 </NavLink>
               </p>

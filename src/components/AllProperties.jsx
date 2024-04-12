@@ -57,18 +57,30 @@ const AllProperties = ({ data }) => {
   return (
     <div className="lg:px-32 my-10 md:mt-24 px-2">
       <div className="text-center space-y-3 mb-6">
-        <h1 className="text-4xl md:text-5xl font-medium text-hero-color uppercase">
+        <h1
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          className="text-4xl md:text-5xl font-medium text-hero-color uppercase"
+        >
           BEST PROPERTIES
         </h1>
-        <p className="max-w-[600px] mx-auto text-sm md:text-base font-light">
+        <p
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-duration="1000"
+          className="max-w-[600px] mx-auto text-sm md:text-base font-light"
+        >
           Welcome to our Best Properties section, where we showcase the most
           outstanding commercial real estate opportunities tailored to meet your
           business needs.
         </p>
       </div>
       <div className="my-8 flex justify-center flex-wrap gap-6">
-        <div className="">
-          <label className="flex items-center gap-3">
+        <div data-aos="fade-right"
+            data-aos-duration="2000">
+          <label
+            className="flex items-center gap-3"
+          >
             <input
               ref={allRef}
               onChange={handleFilter}
@@ -79,7 +91,8 @@ const AllProperties = ({ data }) => {
             <span className="label-text font-medium">All</span>
           </label>
         </div>
-        <div className="">
+        <div data-aos="fade-right"
+            data-aos-duration="1500">
           <label className="flex items-center gap-3">
             <input
               onChange={handleFilter}
@@ -91,7 +104,8 @@ const AllProperties = ({ data }) => {
             <span className="label-text font-medium">Rent</span>
           </label>
         </div>
-        <div className="">
+        <div data-aos="fade-right"
+            data-aos-duration="1000">
           <label className="flex items-center gap-3">
             <input
               onChange={handleFilter}
@@ -103,7 +117,8 @@ const AllProperties = ({ data }) => {
             <span className="label-text font-medium">Sale</span>
           </label>
         </div>
-        <div className="">
+        <div data-aos="fade-right"
+            data-aos-duration="500">
           <label className="flex items-center gap-3">
             <input
               onChange={handleFilter}
@@ -122,7 +137,7 @@ const AllProperties = ({ data }) => {
         ))}
       </div>
       {seeAllToggle && (
-        <div className="text-center my-7">
+        <div data-aos="fade-up" className="text-center my-7">
           <button
             onClick={() => {
               setAllData(data.slice(0, data.length));

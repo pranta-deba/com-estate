@@ -23,7 +23,7 @@ const ItemCard = ({ item }) => {
   const discount = 45;
   const token = createNumToToken(id);
   return (
-    <div className="md:w-sm hover:shadow-sm hover:shadow-[#00AEFF] rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 border-2 cursor-pointer relative">
+    <div data-aos="fade-up" className="md:w-sm hover:shadow-sm hover:shadow-[#00AEFF] rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 border-2 cursor-pointer relative">
       {discountPriceFind > 50000 ? (
         <p className="absolute right-2 top-2 bg-[red] px-6 py-2 rounded-lg text-white font-medium">
           OFF {discount}%
