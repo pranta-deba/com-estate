@@ -8,7 +8,8 @@ import { useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
 
 const UpdateProfile = () => {
-  const { user, setUser, updateUserProfile ,setProfilePic, setProfileName} = useAuth(); 
+  const { user, setUser, updateUserProfile, setProfilePic, setProfileName } =
+    useAuth();
   const [updateLoader, setUpdateLoader] = useState(false);
 
   const {
@@ -25,13 +26,13 @@ const UpdateProfile = () => {
   });
 
   const handleUpdateUser = (a) => {
-    setUpdateLoader(true)
+    setUpdateLoader(true);
     const displayName = a.firstName + " " + a.lastName;
     const photoURL = a.photoURL;
     updateUserProfile({ displayName, photoURL })
       .then(() => {
         onAuthStateChanged(auth, (currentUser) => {
-          setUser(null)
+          setUser(null);
           if (currentUser) {
             toast.success("Profile Update Successfully.", {
               position: "top-center",
@@ -47,37 +48,50 @@ const UpdateProfile = () => {
             setUser(currentUser);
             setProfilePic(currentUser.photoURL);
             setProfileName(currentUser.displayName);
-            setUpdateLoader(false)
+            setUpdateLoader(false);
           } else {
             setUser(null);
-            setUpdateLoader(false)
+            setUpdateLoader(false);
           }
         });
       })
       .catch((error) => {
         console.log(error);
-        setUpdateLoader(false)
+        setUpdateLoader(false);
       });
   };
   const onSubmit = (data) => {
     handleUpdateUser(data);
   };
   return (
-    <div className="mt-12 flex flex-col justify-center gap-4 lg:px-32 px-2">
-      <div className="flex-1">
-        <div className="flex flex-col  dark:bg-gray-50 dark:text-gray-800">
+    <>
+      <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
+        <h1 className="bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
+          Profile
+        </h1>
+      </div>
+      <div className="my-12 lg:px-32 px-2 flex flex-col md:flex-row gap-6 justify-center">
+        <div
+          data-aos="fade-up"
+          className="flex-1 flex flex-col justify-center  border md:max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800"
+        >
           <img
             src={user?.photoURL || "/log.png"}
             alt=""
-            className="flex-shrink-0 object-cover max-h-[200px] max-w-[200px] mx-auto dark:bg-gray-500 aspect-square rounded-full"
+            className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
           />
-          <div className="text-center">
-            <h2 className="text-xl font-semibold">{user?.displayName}</h2>
+          <div className="space-y-4 text-center  dark:divide-gray-300">
+            <div className="my-2 space-y-1 text-center">
+              <h2 className="text-xl font-semibold sm:text-2xl">
+                {user?.displayName || "unknown"}
+              </h2>
+              <p className="text-xs sm:text-base dark:text-gray-600">
+                {user.email ? user.email : "unknown"}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex-1">
-        <div className="md:w-[60%] mx-auto">
+        <div data-aos="fade-up" className="flex-1">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"
@@ -163,7 +177,7 @@ const UpdateProfile = () => {
         </div>
       </div>
       <ToastContainer />
-    </div>
+    </>
   );
 };
 

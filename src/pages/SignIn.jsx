@@ -191,14 +191,14 @@ const Login = () => {
             >
               <FaGoogle className="hover:scale-125 transition-all" />
             </button>
-            <button className="p-3 rounded-sm text-xl">
-              <FaTwitter className="hover:scale-125 transition-all" />
-            </button>
             <button
               onClick={handleGithubSignIn}
               className="p-3 rounded-sm text-xl"
             >
               <BsGithub className="hover:scale-125 transition-all" />
+            </button>
+            <button className="p-3 rounded-sm text-xl">
+              <FaTwitter className="hover:scale-125 transition-all" />
             </button>
           </div>
           <p className="px-6 text-sm text-center dark:text-gray-600">

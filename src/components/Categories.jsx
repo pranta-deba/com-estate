@@ -14,7 +14,7 @@ const Categories = ({ data }) => {
   useEffect(() => {
     const ware = data.filter((i) => i.segment_name === "Warehouse");
     const res = data.filter((i) => i.segment_name === "Restaurant");
-    const offi = data.filter((i) => i.segment_name === "Office Space");
+    const offi = data.filter((i) => i.segment_name === "Apartment");
     const enter = data.filter((i) => i.segment_name === "Entertainment Venue");
     setWarehouse(ware.length);
     setRestaurant(res.length);

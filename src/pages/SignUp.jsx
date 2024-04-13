@@ -30,7 +30,7 @@ const SignUp = () => {
       .then(() => {
         toast.success("Registration Successfully.", {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -43,12 +43,12 @@ const SignUp = () => {
           reset();
           setSignUpLoader(false);
           navigate(form);
-        }, 2000);
+        }, 3000);
       })
       .catch((error) => {
         toast.error(error.message.split("/")[1].split(")")[0], {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

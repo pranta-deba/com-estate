@@ -96,7 +96,7 @@ const Details = () => {
           </div>
           <div className="border-2 border-[#D2EDF8]">
             <div className="bg-[#D2EDF8] border-2 border-[#D2EDF8] p-2 md:p-6 m-[1px]">
-              <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div className="flex  flex-col gap-3 flex-wrap">
                 <p className="flex items-center gap-1">
                   <SiBlueprint className="font-light text-slate-500" />
                   <span className="text-hero-color font-semibold">Area :</span>
@@ -117,6 +117,7 @@ const Details = () => {
                   {segment_name}
                 </p>
               </div>
+
               <div className="flex justify-between items-center">
                 <p className="flex gap-1 items-center py-2">
                   <FaLocationDot className="text-hero-color font-semibold" />{" "}

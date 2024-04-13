@@ -10,6 +10,7 @@ import PrivateSignInSignUp from "./PrivateSignInSignUp";
 import Properties from "../pages/Properties";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Search from "../pages/Search";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>,
+      },
+      {
+        path: "/search/:value",
+        element: <Search/>
       },
     ],
   },

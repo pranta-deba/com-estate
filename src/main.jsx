@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routers/Routers.jsx";
 import AuthProvider from "./authProvider/AuthProvider.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import "animate.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();

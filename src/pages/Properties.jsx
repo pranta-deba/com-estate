@@ -22,7 +22,7 @@ const Properties = () => {
   return (
     <>
       <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
-        <div className="lg:px-32 px-2  bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-xl md:text-4xl font-medium md:font-semibold">
+        <div className="lg:px-32 px-2  bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
           All Properties
         </div>
       </div>

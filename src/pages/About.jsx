@@ -54,13 +54,19 @@ const About = () => {
       <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/bg.jpg')] bg-center bg-no-repeat bg-fixed">
         <div className="bg-white bg-opacity-75 pb-10">
           <div className="py-4 md:py-12">
-            <h1 data-aos="fade-up"
-            data-aos-duration="1000" className="text-center text-4xl font-bold">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="text-center text-4xl font-bold"
+            >
               <span className="text-hero-color">Recent</span>{" "}
               <span className="text-[#00AEFF]">FAQ&apos;S</span>
             </h1>
-            <p data-aos="fade-up"
-            data-aos-duration="1200" className="max-w-[400px] mx-auto text-center font-light">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              className="max-w-[400px] mx-auto text-center font-light"
+            >
               Get Your Questions Answered
             </p>
           </div>
@@ -73,8 +79,11 @@ const About = () => {
               />
             </div>
             <div className="flex-1 flex flex-col gap-1">
-              <div data-aos="fade-up"
-            data-aos-duration="500" className="collapse collapse-arrow  rounded-none border-b border-b-hero-color">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="500"
+                className="collapse collapse-arrow  rounded-none border-b border-b-hero-color"
+              >
                 <input type="radio" name="my-accordion-2" defaultChecked />
                 <div className="collapse-title text-xl font-medium text-hero-color">
                   What is the procedure to sell house?
@@ -88,8 +97,11 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-up"
-            data-aos-duration="1000" className="collapse collapse-arrow rounded-none border-b border-b-hero-color">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="collapse collapse-arrow rounded-none border-b border-b-hero-color"
+              >
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium text-hero-color">
                   What is your sales commission?
@@ -103,8 +115,11 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-up"
-            data-aos-duration="1500" className="collapse collapse-arrow rounded-none border-b border-b-hero-color">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                className="collapse collapse-arrow rounded-none border-b border-b-hero-color"
+              >
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium text-hero-color">
                   How will i get my amount?
@@ -118,8 +133,11 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-up"
-            data-aos-duration="2000" className="collapse collapse-arrow rounded-none border-b border-b-hero-color">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="collapse collapse-arrow rounded-none border-b border-b-hero-color"
+              >
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium text-hero-color">
                   What is the first step in buying a house?

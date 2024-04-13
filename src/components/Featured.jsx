@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Featured = ({ data }) => {
   const [latestData, setLatestData] = useState([]);
   useEffect(() => {
-    const latest = data.slice(5, data.length - 1);
+    const latest = data.slice(10, data.length - 1);
     setLatestData(latest);
   }, [data]);
 
