@@ -3,9 +3,9 @@ import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const PrivateSignInSignUp = ({ children }) => {
-  const { user } = useAuth();
+  const { user, logged } = useAuth();
 
-  if (!user) {
+  if (!user && !logged) {
     return children;
   }
   return <Navigate to="/"></Navigate>;

@@ -24,13 +24,14 @@ const SignUp = () => {
     watch,
   } = useForm();
 
+
   const handleCreateUser = (a) => {
     setSignUpLoader(true);
     createUser(a.email, a.password)
       .then(() => {
         toast.success("Registration Successfully.", {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -43,12 +44,12 @@ const SignUp = () => {
           reset();
           setSignUpLoader(false);
           navigate(form);
-        }, 3000);
+        }, 2000);
       })
       .catch((error) => {
         toast.error(error.message.split("/")[1].split(")")[0], {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -103,6 +104,42 @@ const SignUp = () => {
           >
             <label>
               <input
+                type="text"
+                name="firstName"
+                {...register("firstName", {
+                  required: "input field is required",
+                  minLength: {
+                    value: 2,
+                    message: "First name should be at least 3 characters.",
+                  },
+                })}
+                placeholder="First Name"
+                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
+              />
+              <p className="text-xs text-start text-red-500">
+                {errors.firstName?.message}
+              </p>
+            </label>
+            <label>
+              <input
+                type="text"
+                name="lastName"
+                {...register("lastName", {
+                  required: "input field is required",
+                  minLength: {
+                    value: 2,
+                    message: "Last name should be at least 3 characters.",
+                  },
+                })}
+                placeholder="Last Name"
+                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
+              />
+              <p className="text-xs text-start text-red-500">
+                {errors.lastName?.message}
+              </p>
+            </label>
+            <label>
+              <input
                 type="email"
                 name="email"
                 {...register("email", {
@@ -121,14 +158,34 @@ const SignUp = () => {
                 </p>
               )}
             </label>
+            <label>
+              <input
+                type="text"
+                name="photoURL"
+                {...register("photoURL", {
+                  required: "input field is required",
+                })}
+                placeholder="Photo URL"
+                className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
+              />
+              <p className="text-xs text-start text-red-500">
+                {errors.photoURL?.message}
+              </p>
+            </label>
             <label className="relative">
               <input
                 type={passwordToggle1 ? "text" : "password"}
                 name="password"
                 {...register("password", {
                   required: "input field is required",
-                  minLength: { value: 6, message: "Password should be at least 6 characters." },
-                  maxLength: { value: 12, message: "The maximum password can be 12 characters" },
+                  minLength: {
+                    value: 6,
+                    message: "Password should be at least 6 characters.",
+                  },
+                  maxLength: {
+                    value: 12,
+                    message: "The maximum password can be 12 characters",
+                  },
                   pattern: /^(?=.*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d{2,}).{6,}$/i,
                 })}
                 placeholder="Password"
@@ -136,7 +193,8 @@ const SignUp = () => {
               />
               {errors?.password?.type === "pattern" && (
                 <p className="text-xs text-start text-red-500">
-                  at least one uppercase letter, one lowercase letter, and one number.
+                  at least one uppercase letter, one lowercase letter, and one
+                  number.
                 </p>
               )}
               <p className="text-xs text-start text-red-500">

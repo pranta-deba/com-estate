@@ -56,8 +56,18 @@ const UpdateProfile = () => {
           }
         });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        toast.error("Something wrong. Please try again.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
         setUpdateLoader(false);
       });
   };
@@ -107,7 +117,10 @@ const UpdateProfile = () => {
                 name="firstName"
                 {...register("firstName", {
                   required: "input field is required",
-                  minLength: { value: 2, message: "min length 3" },
+                  minLength: {
+                    value: 2,
+                    message: "First name should be at least 3 characters.",
+                  },
                 })}
                 placeholder="First Name"
                 className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"
@@ -122,7 +135,10 @@ const UpdateProfile = () => {
                 name="lastName"
                 {...register("lastName", {
                   required: "input field is required",
-                  minLength: { value: 2, message: "min length 3" },
+                  minLength: {
+                    value: 2,
+                    message: "Last name should be at least 3 characters.",
+                  },
                 })}
                 placeholder="Last Name"
                 className="w-full border-2 focus:border-[#73C2FC] p-3 outline-none text-black transition-all rounded-none"

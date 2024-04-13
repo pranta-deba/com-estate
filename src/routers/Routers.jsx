@@ -6,15 +6,17 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import UpdateProfile from "../pages/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
-import PrivateSignInSignUp from "./PrivateSignInSignUp";
+// import PrivateSignInSignUp from "./PrivateSignInSignUp";
 import Properties from "../pages/Properties";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Search from "../pages/Search";
+import Error404 from "../pages/Error404";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <Error404/>,
     element: <Root />,
     children: [
       {
@@ -31,19 +33,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/sign_in",
-        element: (
-          <PrivateSignInSignUp>
-            <SignIn />
-          </PrivateSignInSignUp>
-        ),
+        element:<SignIn />,
       },
       {
         path: "/sign_up",
-        element: (
-          <PrivateSignInSignUp>
-            <SignUp />
-          </PrivateSignInSignUp>
-        ),
+        element:<SignUp/>,
       },
       {
         path: "/update_profile",
