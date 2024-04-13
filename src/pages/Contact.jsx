@@ -3,11 +3,16 @@ import { MdLocationPin, MdMarkEmailRead } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const position = [22.3613450334504, 91.81256696375297];
   return (
     <div>
+      <Helmet>
+        <title>COM.Estate || Contact</title>
+        <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+      </Helmet>
       <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
         <div className="bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
           Contact

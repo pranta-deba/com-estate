@@ -109,7 +109,7 @@ const Details = () => {
                   </span>{" "}
                   {status}
                 </p>
-                <p className="flex items-center gap-1 md:h-[45px] md:overflow-auto scrollBar">
+                <p className="flex items-center gap-1">
                   <MdSegment className="text-hero-color font-semibold" />
                   <span className="text-hero-color font-semibold">
                     Segment name :

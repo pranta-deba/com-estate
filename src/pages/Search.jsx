@@ -5,6 +5,7 @@ import animateData2 from "../assets/loading.json";
 import { useEffect, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import ItemCard from "../components/ItemCard";
+import { Helmet } from "react-helmet-async";
 
 const Search = () => {
   const { value } = useParams();
@@ -33,6 +34,10 @@ const Search = () => {
 
   return (
     <>
+      <Helmet>
+        <title>COM.Estate || Search</title>
+        <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+      </Helmet>
       <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
         <div className="bg-hero-color bg-opacity-55 text-white capitalize py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">
           {value}
@@ -59,7 +64,9 @@ const Search = () => {
             <h1 className="mb-4 text-6xl font-semibold text-hero-color">
               Oops!
             </h1>
-            <p className="mb-4 text-lg text-gray-600"><span className="capitalize">{value}</span> Not Found</p>
+            <p className="mb-4 text-lg text-gray-600">
+              <span className="capitalize">{value}</span> Not Found
+            </p>
             <div className="max-w-[300px]">
               <Lottie animationData={animateData} />
             </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ClientCard from "../components/ClientCard";
 import { useLoaderData } from "react-router-dom";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const data = useLoaderData();
@@ -15,6 +16,10 @@ const About = () => {
   }, [data]);
   return (
     <div className="flex flex-col gap-20">
+      <Helmet>
+        <title>COM.Estate || About</title>
+        <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+      </Helmet>
       <div>
         <div className="bg-[linear-gradient(45deg,rgba(0,0,0,1),rgba(0,0,0,0.5)),url('/4.jpg')] bg-center bg-no-repeat bg-fixed">
           <div className="bg-hero-color bg-opacity-55 text-white py-4 md:py-20 text-center text-4xl font-medium md:font-semibold">

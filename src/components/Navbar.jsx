@@ -81,7 +81,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#004274] text-white fixed z-10 md:px-20">
+    <div className="navbar bg-[#004274] text-white fixed z-50 md:px-20">
       <div className="navbar-start items-center md:gap-0">
         <div className="flex lg:hidden">
           <div className="z-50">
