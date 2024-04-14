@@ -100,7 +100,7 @@ const UpdateProfile = () => {
               <h2 className="text-xl font-semibold sm:text-2xl">
                 {user?.displayName || "unknown"}
               </h2>
-              <p className="text-xs sm:text-base dark:text-gray-600">
+              <p className="text-xs text-slate-600">
                 {user.email ? user.email : "unknown"}
               </p>
             </div>

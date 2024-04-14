@@ -5,8 +5,8 @@ import Footer from "../components/Footer";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 const Root = () => {
-  const { userExitsLoader } = useAuth();
-  if (userExitsLoader) {
+  const { user,userExitsLoader } = useAuth();
+  if (userExitsLoader && !user) {
     return (
       <div className="flex justify-center py-10">
         <PropagateLoader color="#1E306E" />

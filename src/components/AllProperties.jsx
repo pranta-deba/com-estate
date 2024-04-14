@@ -140,7 +140,7 @@ const AllProperties = ({ data }) => {
         <div data-aos="fade-up" className="text-center my-7">
           <button
             onClick={() => {
-              setAllData(data.slice(0, data.length));
+              setAllData(data.slice(0, 10));
               setSeeAllToggle(false);
             }}
             className="btn bg-[#00AEFF] text-white hover:bg-hero-color transition-all rounded-md px-8"
